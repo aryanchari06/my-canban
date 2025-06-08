@@ -124,7 +124,8 @@ function App() {
 
   useEffect(() => {
     const columns = localStorage.getItem("userCanvas");
-    setColumns(JSON.parse(columns));
+    console.log(columns);
+    if (columns) setColumns(JSON.parse(columns));
   }, []);
 
   return (
