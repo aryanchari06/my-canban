@@ -19,8 +19,8 @@ A simple and interactive Kanban-style task board built with **React** and **Tail
 
 ### 1. Clone the repository
 ```
-git clone https://github.com/your-username/react-dnd-task-board.git
-cd react-dnd-task-board
+git clone https://github.com/aryanchari06/my-canban.git
+cd my-canban
 ```
 
 ### 2. Install dependencies
