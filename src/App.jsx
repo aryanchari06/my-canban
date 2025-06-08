@@ -1,34 +1,7 @@
 import { useEffect, useState } from "react";
 
 function App() {
-  const [columns, setColumns] = useState([
-    {
-      id: Date.now(),
-      title: "To-Do",
-      tasks: [
-        {
-          id: 1,
-          taskName: "Complete project",
-          isComplete: false,
-        },
-        {
-          id: 2,
-          taskName: "Complete another project",
-          isComplete: false,
-        },
-      ],
-    },
-    {
-      id: Date.now() + 1,
-      title: "Ongoing",
-      tasks: [],
-    },
-    {
-      id: Date.now() + 2,
-      title: "Completed",
-      tasks: [],
-    },
-  ]);
+  const [columns, setColumns] = useState();
   const [columnNameInput, setColumnNameInput] = useState();
   const [columnTaskInput, setColumnTaskInput] = useState();
 
@@ -126,6 +99,35 @@ function App() {
     const columns = localStorage.getItem("userCanvas");
     console.log(columns);
     if (columns) setColumns(JSON.parse(columns));
+    else
+      setColumns([
+        {
+          id: Date.now(),
+          title: "To-Do",
+          tasks: [
+            {
+              id: 1,
+              taskName: "Complete project",
+              isComplete: false,
+            },
+            {
+              id: 2,
+              taskName: "Complete another project",
+              isComplete: false,
+            },
+          ],
+        },
+        {
+          id: Date.now() + 1,
+          title: "Ongoing",
+          tasks: [],
+        },
+        {
+          id: Date.now() + 2,
+          title: "Completed",
+          tasks: [],
+        },
+      ]);
   }, []);
 
   return (
